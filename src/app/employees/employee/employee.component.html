@@ -1,0 +1,33 @@
+<h1 class="display-4">Emp Register</h1>
+<form [formGroup]="ngForm" autocomplete="off">
+  <div class="form-group">
+    <input formControlName="fullName" [(ngModel)]="this.ngForm.fullName" class="form-control" placeholder="Full Name"
+      required>
+    <div *ngIf="f.fullName.touched && f.fullName.invalid" class="error">Required</div>
+  </div>
+  <div class="form-group">
+    <input formControlName="empcode" [(ngModel)]="this.ngForm.empcode" class="form-control" placeholder="Employee Code"
+      required>
+    <div *ngIf="f.empcode.touched && f.empcode.invalid" class="error">Required</div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input formControlName="position" [(ngModel)]="this.ngForm.position" class="form-control" placeholder="Position"
+        required>
+      <div *ngIf="f.position.touched && f.position.invalid" class="error">Required</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input formControlName="mobileNum" [(ngModel)]="this.ngForm.mobileNum" class="form-control"
+        placeholder="Mobile Number" required>
+      <div *ngIf="f.mobileNum.touched && f.mobileNum.invalid" class="error">Required</div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <button type="submit" class="btn btn-lg btn-block btn-info" (click)="submitForm()">SUBMIT</button>
+    </div>
+    <div class="form-group col-md-6">
+      <button type="submit" class="btn btn-lg btn-block btn-info" routerLink="/InlineKendo">Back To Kendo</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+
+<kendo-grid id="productsGrid" (cellClick)="cellClickHandler($event)" [groupable]="true" [group]="groups"
+  (groupChange)="groupChange($event)" [data]="getProductLists" height="500">
+  <ng-template kendoGridToolbarTemplate>
+    <button type="button" (click)="addHandler($event)">Add Document Using Kendo</button>
+    <button type="button" (click)="addHandler($event, 'form')">Add Document Using Form</button>
+    <button *ngIf="formGroup && cancelClick" (click)="saveHandler()" class="k-button save">Save</button>
+    <button *ngIf="formGroup && cancelClick" (click)="cancelHandler()" class="k-button k-primary">Cancel</button>
+  </ng-template>
+  <kendo-grid-column field="ProductName" title="Product Name"></kendo-grid-column>
+  <kendo-grid-column field="UnitPrice" editor="numeric" title="Price"></kendo-grid-column>
+  <kendo-grid-column field="Discontinued" editor="boolean" title="Discontinued"></kendo-grid-column>
+  <kendo-grid-column field="UnitsInStock" editor="numeric" title="Units In Stock"></kendo-grid-column>
+</kendo-grid>
